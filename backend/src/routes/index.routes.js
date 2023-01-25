@@ -1,9 +1,12 @@
-import {Router} from 'express'
-const router = Router()
+import { Router } from "express";
+const router = Router();
 
+import userRoutes from "./user.routes.js";
 
 router.get("/", (req, res) => {
   res.send("Index route");
 });
 
-export default router
+router.use("/user", userRoutes);
+
+export default router;
