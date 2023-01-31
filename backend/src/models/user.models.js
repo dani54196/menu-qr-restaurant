@@ -21,6 +21,11 @@ User.init(
         user.password = bcrypt.hashSync(user.password, 10);
       },
     },
+    // instanceMethods:{
+    //   validPassword: function(password) {
+    //     return bcrypt.compareSync(password, user.password);
+    //   }
+    // },
     timestamps: true,
     sequelize, // We need to pass the connection instance
     modelName: "User", // We need to choose the model name

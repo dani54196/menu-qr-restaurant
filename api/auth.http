@@ -1,0 +1,16 @@
+@host = http://localhost
+@port = 3000
+@api = {{host}}:{{port}}
+### sing in
+POST {{api}}/api/auth/singin
+Content-Type: application/json
+
+{
+  "email": "dani54196@gmail.com",
+  "password": "contra"
+}
+
+### validate
+POST {{api}}/api/auth/validate
+Content-Type: application/json
+auth-token: asdasd
