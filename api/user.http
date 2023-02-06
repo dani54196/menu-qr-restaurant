@@ -10,7 +10,7 @@ Content-Type: application/json
 {
   "user_id": 1,
   "email": "dani54196@gmail.com",
-  "password": "contra",
+  "password": "contra1@",
   "firstName": "Daniel",
   "lastName": "Cardozo"
 }
