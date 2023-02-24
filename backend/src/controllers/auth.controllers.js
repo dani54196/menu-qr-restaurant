@@ -31,7 +31,11 @@ authControllers.singIn = async (req, res) => {
   if (!isMatch) {
     return res.status(400).json({ message: "invalid password" });
   }
-  res.json({ email, password });
+
+  // Generate JWT
+  const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET , { expiresIn: "1h" });
+
+  res.json({ token });
 };
 
 export default authControllers;
