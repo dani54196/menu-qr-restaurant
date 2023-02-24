@@ -13,7 +13,7 @@ authControllers.singUp = async (req, res) => {
   if (user) {
     return res.status(401).json({ message: "email repeat" });
   }
-  // the password hash with hooks of sequelize
+  // the password bcript hash in hooks
   // create the user
   User.create({ user_id, email, password, firstName });
   res.json({ msg: "user cerate" });
@@ -31,10 +31,9 @@ authControllers.singIn = async (req, res) => {
   if (!isMatch) {
     return res.status(400).json({ message: "invalid password" });
   }
-
-  // Generate JWT
-  const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET , { expiresIn: "1h" });
-
+  // generate JWT
+  const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET , { expiresIn: "24h" });
+  // return token
   res.json({ token });
 };
 

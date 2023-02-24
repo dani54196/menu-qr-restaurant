@@ -6,7 +6,7 @@ import express from "express";
 import * as dotenv from "dotenv";
 dotenv.config();
 
-import("./models/index.models.js");
+import("./db.js");
 import indexRoutes from "./routes/index.routes.js";
 
 // config

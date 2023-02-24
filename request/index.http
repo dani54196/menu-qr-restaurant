@@ -1,0 +1,12 @@
+@host = http://localhost
+@port = 3000
+@api = {{host}}:{{port}}
+### index
+GET {{api}}/
+### get all users
+GET {{api}}/users
+
+### protected route 
+get {{api}}/
+authorization: asdqwe
+
