@@ -20,7 +20,7 @@ app.use(cors());
 app.use(helmet());
 
 // routes
-app.use("/api", indexRoutes);
+app.use("/", indexRoutes);
 
 //
 app.listen(port, () => {
