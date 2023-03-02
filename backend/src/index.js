@@ -6,9 +6,12 @@ import express from "express";
 import * as dotenv from "dotenv";
 dotenv.config();
 
-import("./db.js");
+import "./db.js"
+import "./models/associations.js"
+
 import indexRoutes from "./routes/index.routes.js";
 
+import "./models/associations.js"
 // config
 const app = express();
 const port = process.env.PORT;

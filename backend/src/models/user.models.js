@@ -2,6 +2,7 @@ import { Sequelize, DataTypes, Model } from "sequelize";
 import bcrypt from "bcryptjs";
 
 import sequelize from "../db.js";
+import Restaurant from "./restaurant.model.js";
 
 class User extends Model {}
 
@@ -27,12 +28,12 @@ User.init(
       //   },
       // },
     },
-    firstName: { type: DataTypes.STRING },
+    firstName: { type: DataTypes.STRING }
   },
   {
     timestamps: true,
     sequelize, // We need to pass the connection instance
-    modelName: "User", // We need to choose the model name
+    modelName: "user", // We need to choose the model name
     // hash password
     hooks: {
       beforeCreate: async (user) => {

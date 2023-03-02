@@ -7,7 +7,7 @@ const authControllers = {};
 
 authControllers.singUp = async (req, res) => {
   //get json
-  const { user_id, email, password, firstName } = req.body;
+  const { user_id, email, password, firstName, restaurants } = req.body;
   // check email repeat
   const user = await User.findOne({ where: { email } });
   if (user) {
@@ -15,7 +15,7 @@ authControllers.singUp = async (req, res) => {
   }
   // the password bcript hash in hooks
   // create the user
-  User.create({ user_id, email, password, firstName });
+  User.create({ user_id, email, password, firstName,restaurants });
   res.json({ msg: "user cerate" });
 };
 
