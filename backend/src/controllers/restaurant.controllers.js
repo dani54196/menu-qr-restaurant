@@ -28,7 +28,7 @@ restaurantControllers.createRestaurnt = async (req, res) => {
 
 restaurantControllers.deleteRestaurant = async (req, res) => {
   Restaurant.destroy({ where: { id: req.params.id } });
-  res.json({msg: "delete restaurant"})
+  res.json({msg: "restaurant delete "})
 };
 
 restaurantControllers.updateRestaurant = async (req, res) => {
