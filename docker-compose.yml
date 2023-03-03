@@ -3,7 +3,7 @@ version: "3.3"
 services:
   mysqldb:
     image: mysql
-      #    restart: always #on-failure:5
+    restart: always #on-failure:5
     # env_file: ./.env
     environment:
       - MYSQL_ROOT_PASSWORD=pass

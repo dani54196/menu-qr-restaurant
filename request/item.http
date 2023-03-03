@@ -1,0 +1,38 @@
+@host = http://localhost
+@port = 3000
+@api = {{host}}:{{port}}/item
+
+### get all items
+GET {{api}}
+
+### get items
+GET {{api}}/1
+
+### create a item
+POST {{api}}
+Content-Type: application/json
+
+{
+  "name": "empanada de lechuga",
+  "description": "empanada con masa de avena y lechuga",
+  "price": "250",
+  "img_url": "imagen",
+  "avaible": false,
+  "restaurantId": "1"
+}
+
+### delete a item
+DELETE {{api}}/1
+
+### create a item
+PUT  {{api}}/1
+Content-Type: application/json
+
+{
+  "name": "pizza doble queso",
+  "description": "pizza de doble queso",
+  "price": "500",
+  "img_url": "imagencitadepizza",
+  "avaible": true,
+  "userId": "1"
+}
