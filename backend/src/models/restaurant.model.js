@@ -6,7 +6,7 @@ class Restaurant extends Model {}
 
 Restaurant.init(
   {
-    restaurant_id: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,

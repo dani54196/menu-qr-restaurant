@@ -4,9 +4,4 @@
 ### index
 GET {{api}}/
 ### get all users
-GET {{api}}/users
-
-### protected route 
-get {{api}}/
-authorization: asdqwe
-
+GET {{api}}/user

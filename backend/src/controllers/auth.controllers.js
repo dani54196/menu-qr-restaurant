@@ -15,8 +15,14 @@ authControllers.singUp = async (req, res) => {
   }
   // the password bcript hash in hooks
   // create the user
-  User.create({ user_id, email, password, firstName,restaurants });
-  res.json({ msg: "user cerate" });
+  const userCreate = await User.create({
+    user_id,
+    email,
+    password,
+    firstName,
+    restaurants,
+  });
+  res.json(userCreate);
 };
 
 authControllers.singIn = async (req, res) => {
@@ -32,7 +38,9 @@ authControllers.singIn = async (req, res) => {
     return res.status(400).json({ message: "invalid password" });
   }
   // generate JWT
-  const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET , { expiresIn: "24h" });
+  const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
+    expiresIn: "24h",
+  });
   // return token
   res.json({ token });
 };

@@ -1,0 +1,38 @@
+@host = http://localhost
+@port = 3000
+@api = {{host}}:{{port}}/restaurant
+
+### get all restaurants
+GET {{api}}
+
+### get restaurant
+GET {{api}}/1
+
+### create a restaurant
+POST {{api}}
+Content-Type: application/json
+
+{
+  "name": "pizzeria ia",
+  "description": "venta de pizzas",
+  "location": "av 9 julio 500",
+  "logo_url": "imagen",
+  "qr_url": "qr",
+  "userId": "1"
+}
+
+### delete a restaurant
+DELETE {{api}}/1
+
+### create a restaurant
+PUT  {{api}}/1
+Content-Type: application/json
+
+{
+  "name": "pizzeria boom",
+  "description": "venta de pizzas",
+  "location": "av 9 julio 500",
+  "logo_url": "imagencita",
+  "qr_url": "qr",
+  "userId": "1"
+}

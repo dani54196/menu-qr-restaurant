@@ -1,22 +1,22 @@
 @host = http://localhost
 @port = 3000
-@api = {{host}}:{{port}}
+@api = {{host}}:{{port}}/auth
 
 ### sing up
-POST {{api}}/auth/singup
+POST {{api}}/singup
 Content-Type: application/json
 
 {
-  "email": "d2ani541961@gmail.com",
+  "email": "d22ani541961@gmail.com",
   "password": "1234abCD!",
   "firstName": "dani"
 }
 
 ### sing in
-POST {{api}}/auth/singin
+POST {{api}}/singin
 Content-Type: application/json
 
 {
-  "email": "d2ani541961@gmail.com",
+  "email": "d22ani541961@gmail.com",
   "password": "1234abCD!"
 }
