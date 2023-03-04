@@ -1,6 +1,9 @@
 ### General
-- [X] __(doc)__ try catch controllers
-- [X] __(doc)__ Docs Api
-- [ ] __(doc)__ Test Api
-- [ ] __(doc)__ Index page frontend
+
+- [x] **(doc)** try catch controllers
+- [x] **(doc)** Docs user route
+- [x] **(doc)** Docs restaurant
+- [ ] **(doc)** Docs the auth system
+- [ ] **(doc)** Test Api
+- [ ] **(doc)** Index page frontend
 - [ ] frontend
