@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node src/index",
     "dev": "node --watch src/index",
-    "test": "jest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "seed": "node src/db/seed"
   },
   "keywords": [
