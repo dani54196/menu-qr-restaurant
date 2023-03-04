@@ -1,4 +1,4 @@
-import sequelize from "../db.js";
+import sequelize from "./connection.js";
 import "../models/associations.js";
 
 import User from "../models/user.models.js";
