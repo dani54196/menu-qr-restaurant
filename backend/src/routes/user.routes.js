@@ -11,21 +11,23 @@ const router = Router();
  *      type: object
  *      properties:
  *        id:
+ *          type: integer
+ *          description: id of user auto incremental
+ *        email:
  *          type: string
- *          description: the auto-generated id of user
- *        name:
+ *          description: email of the user
+ *        password:
+ *          type: string
+ *          description: the password hashed of the user
+ *        firstName:
  *          type: string
  *          description: the name of the user
- *        description:
- *          type: string
- *          description: the description of the user
  *      required:
- *        - name
- *        - description
+ *        - email
+ *        - password
  *      example:
- *        id: gQBOyGbxcQy6tEp0aZ78X
- *        name: My first user
- *        description: I have to do Something
+ *        email: My@first.user
+ *        password: mypassword
  *    UserNotFound:
  *      type: object
  *      properties:
@@ -42,7 +44,7 @@ const router = Router();
  *      required: true
  *      schema:
  *        type: string
- *      description: the task id
+ *      description: the user id
  */
 
 /**
@@ -66,10 +68,28 @@ const router = Router();
  *            schema:
  *              type: array
  *              items:
- *                $ref: '#/components/schemas/User'
+ *                $ref: '#/components/models/User'
  */
-
 router.get("/", userControllers.getAllUsers);
+/**
+ * @swagger
+ * /user/{id}:
+ *   get:
+ *     summary: Returns a user by ID
+ *     tags: [Users]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: integer
+ *         required: true
+ *         description: User ID
+ *     responses:
+ *       200:
+ *         description: OK
+ *       404:
+ *         description: User not found
+ */
 router.get("/:id", userControllers.getUser);
 router.delete("/:id", userControllers.deleteUser);
 router.put("/:id", userControllers.updateUser);

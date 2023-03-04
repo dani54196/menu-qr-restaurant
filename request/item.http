@@ -24,7 +24,7 @@ Content-Type: application/json
 ### delete a item
 DELETE {{api}}/1
 
-### create a item
+### update a item
 PUT  {{api}}/1
 Content-Type: application/json
 
