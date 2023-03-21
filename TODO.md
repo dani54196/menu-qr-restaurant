@@ -1,9 +1,7 @@
 ### General
 
 - [x] **(doc)** try catch controllers
-- [x] **(doc)** Docs user route
-- [x] **(doc)** Docs restaurant
-- [ ] **(doc)** Docs the auth system
-- [ ] **(doc)** Test Api
+- [ ] **(doc)** Docs api with https://www.youtube.com/watch?v=SdsaZ-t1QwA&t=409s
+- [ ] **(doc)** test the auth system supertest and jest
 - [ ] **(doc)** Index page frontend
-- [ ] frontend
+- [ ] 
