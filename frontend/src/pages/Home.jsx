@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
+import { Container } from "react-bootstrap";
 
+import "./home.css"
 export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <div className="bg">
+      <Container>Welcome</Container>
+    </div>
+  );
 }

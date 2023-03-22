@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 function NoMatch() {
   return (
     <div>
-      <h2>Nothing to see here!</h2>
+      <h2>Pagina no Existente!</h2>
       <p>
-        <Link to="/">Go to the home page</Link>
+        <Link to="/">Ir a la pagina de inicio</Link>
       </p>
     </div>
   );
