@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import { Link } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
@@ -7,8 +8,40 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-
 import logo from "../assets/img/icons/qr-menu.png";
+
+// const [isLoggedIn, setIsLoggedIn] = useState(0);
+let isLoggedIn = false;
+
+function LogIn() {
+  return (
+    <NavDropdown title="Ingresar" id="navbarScrollingDropdown">
+      <NavDropdown.Item as={Link} to="login">
+        Iniciar Secion
+      </NavDropdown.Item>
+      <NavDropdown.Item as={Link} to="signup">
+        Registrese
+      </NavDropdown.Item>
+    </NavDropdown>
+  );
+}
+
+function AdminPanel() {
+  return (
+    <NavDropdown title="Usuario" id="navbarScrollingDropdown">
+      <NavDropdown.Item as={Link} to="mydata">
+        Mis Datos
+      </NavDropdown.Item>
+      <NavDropdown.Item as={Link} to="myrestaurants">
+        Mis Restaurantes
+      </NavDropdown.Item>
+      <NavDropdown.Divider />
+      <NavDropdown.Item as={Link} to="logout">
+        Salir
+      </NavDropdown.Item>
+    </NavDropdown>
+  );
+}
 
 function NavScrollExample() {
   return (
@@ -25,36 +58,26 @@ function NavScrollExample() {
             navbarScroll
           >
             <Nav.Link as={Link} to="/">
-              Home
+              Inicio
             </Nav.Link>
-            <Nav.Link as={Link} to="/contact">
+            <Nav.Link as={Link} to="/items">
+              Productos
+            </Nav.Link>
+            <Nav.Link as={Link} to="/restaurants">
               Restaurants
             </Nav.Link>
-            <Nav.Link as={Link} to="/contact">
-              Comidas
-            </Nav.Link>
-            <NavDropdown title="Log In" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">
-                Iniciar Secion
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Registrese</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">Salir</NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Usuario
-            </Nav.Link>
+            <Form className="d-flex">
+              <Form.Control
+                bg="transparent"
+                type="search"
+                placeholder="comida o restaurante"
+                className="me-2"
+                aria-label="Search"
+              />
+              <Button variant="outline-light">Buscar</Button>
+            </Form>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-            bg="transparent"
-              type="search"
-              placeholder="comida o restaurante"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-light">Buscar</Button>
-          </Form>
+          {isLoggedIn ? AdminPanel() : LogIn()}
         </Navbar.Collapse>
       </Container>
     </Navbar>

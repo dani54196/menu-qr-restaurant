@@ -1,4 +1,5 @@
 ### General
+...
 
 # Backend
 - [x] DB Connection
@@ -10,12 +11,37 @@
 - [ ] **(doc)** test the auth system supertest and jest
 
 # Frontend
-- [ ] **(doc)** Landing page 
-- [ ] **(doc)** Form Contact
-- [ ] User
-  - [ ] User Interface
-  - [ ] Registre & Log In
-- [ ] **(doc)** Contact Form
-- [ ] **(doc)** View Restaurant
-- [ ] **(doc)** View Items
+### Interfaces
+- [ ] Pages
+  - [x] Landing
+  - [ ] Contact
+    - [ ] Contact Form  
+  - [ ] Restaurant list
+  - [ ] Items
+    - [ ] Categories of the items
+  - [ ] Not Found
+- [ ] Components
+  - [ ] Items
+  - [ ] Restaurants
+  - [x] Navbar
+  - [x] Footer
+- [ ] Logged
+  - [ ] Log In/Registre
+  - [ ] Sign In
+- [ ] Admin
+  - [ ] User panel
+  - [ ] Restaurant panel
 - [ ] **(doc)** Search (Restaurant o Items) 
+### Test & Docs
+- [ ] TEST with unit test
+
+# OPS
+- [ ] Comunicate api with client
+- [ ] Package Containerization
+  - [ ] Dockerfile
+  - [ ] docker-compose 
+- [ ] Launch EC2 instance in AWS
+  - [ ] .ssh
+- [ ] Install docker & docker-compose
+- [ ] Clone the repository
+- [ ] Github Actions for CI/CD

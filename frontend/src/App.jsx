@@ -1,9 +1,11 @@
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
-import Restaurant from "./pages/Restaurant";
+import Restaurants from "./pages/Restaurants";
+import Items from "./pages/Items";
 import NoMatch from "./pages/NoMatch";
 
 function App() {
@@ -13,9 +15,11 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="restaurant" element={<Restaurant />} />
+        <Route path="restaurants" element={<Restaurants />} />
+        <Route path="items" element={<Items />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
