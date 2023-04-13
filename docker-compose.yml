@@ -12,22 +12,31 @@ services:
       - 3306:3306
     volumes:
       - ./docker/db:/var/lib/mysql
-  # app:
-  #   depends_on:
-  #     - mysqldb
-  #   build: ./bezkoder-app
-  #   restart: unless-stopped
-  #   env_file: ./.env
-  #   ports:
-  #     - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
-  #   environment:
-  #     - DB_HOST=mysqldb
-  #     - DB_USER=$MYSQLDB_USER
-  #     - DB_PASSWORD=$MYSQLDB_ROOT_PASSWORD
-  #     - DB_NAME=$MYSQLDB_DATABASE
-  #     - DB_PORT=$MYSQLDB_DOCKER_PORT
-  #   stdin_open: true
-  #   tty: true
+
+  api:
+    build: ./backend
+    ports:
+      - '3000:3000'
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=pass
+      - DB_NAME=menu
+    depends_on:
+      - mysqldb
+  
+  react:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '5173:5173'
+    environment:
+      - API_URL=http://api:8080
+    volumes:
+      - .:/app
+    depends_on:
+      - api
 
 volumes:
   db:

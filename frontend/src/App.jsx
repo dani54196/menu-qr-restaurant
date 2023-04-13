@@ -1,4 +1,5 @@
 import { Routes, Route, Outlet, Link } from "react-router-dom";
+import axios from "axios";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -9,6 +10,8 @@ import Items from "./pages/Items";
 import NoMatch from "./pages/NoMatch";
 
 function App() {
+  axios.defaults.baseURL = "http://localhost:4040";
+
   return (
     <div className="App">
       <Navbar />

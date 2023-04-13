@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Set the application's default environment variables
-ENV NODE_ENV=production
+# ENV NODE_ENV=production
 
 # Expose the port that the application will run on
 EXPOSE 3000

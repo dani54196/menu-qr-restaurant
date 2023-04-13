@@ -1,7 +1,7 @@
 # Base image
-FROM node:14-alpine
+FROM node:14
 
-# Set working directory
+# Create app directory
 WORKDIR /app
 
 # Copy package.json and package-lock.json
@@ -13,17 +13,12 @@ RUN npm install
 # Copy app files
 COPY . .
 
-# Build the app
-RUN npm run build
+# Expose port 3000
+EXPOSE 3000
 
-# Use nginx as the web server
-FROM nginx:alpine
+# Set environment variables
+ENV NODE_ENV=production
+ENV HOST=0.0.0.0
 
-# Copy the built app files to the web server directory
-COPY --from=0 /app/build /usr/share/nginx/html
-
-# Expose port 80
-EXPOSE 80
-
-# Start the nginx server
-CMD ["nginx", "-g", "daemon off;"]
+# Start app with Vite
+CMD ["npm", "run", "dev"]
