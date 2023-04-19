@@ -1,24 +1,26 @@
-# Base image
-FROM node:14
+# Use Node.js 14 LTS as the base image
+FROM node:14-alpine
 
-# Create app directory
+# Set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy package.json and package-lock.json to the container
 COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
-# Copy app files
+# Copy the app to the container
 COPY . .
 
-# Expose port 3000
-EXPOSE 3000
+# Build the app for production
+RUN npm run build
 
-# Set environment variables
+# Expose port 5173
+EXPOSE 8000
+
+# Set the environment variable
 ENV NODE_ENV=production
-ENV HOST=0.0.0.0
 
-# Start app with Vite
+# Start the app
 CMD ["npm", "run", "dev"]

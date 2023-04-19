@@ -36,10 +36,10 @@
 - [ ] TEST with unit test
 
 # OPS
-- [ ] Comunicate api with client
-- [ ] Package Containerization
-  - [ ] Dockerfile
-  - [ ] docker-compose 
+- [x] Comunicate api with client
+- [x] Package Containerization
+  - [x] Dockerfile
+  - [x] docker-compose 
 - [ ] Launch EC2 instance in AWS
   - [ ] .ssh
 - [ ] Install docker & docker-compose

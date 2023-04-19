@@ -24,19 +24,16 @@ services:
       - DB_NAME=menu
     depends_on:
       - mysqldb
-  
-  react:
-    build:
-      context: .
-      dockerfile: Dockerfile
+      
+  vite:
+    build: ./frontend
     ports:
-      - '5173:5173'
-    environment:
-      - API_URL=http://api:8080
+      - "8000:8000"
     volumes:
       - .:/app
-    depends_on:
-      - api
+    environment:
+      - NODE_ENV=production
+    command: ["npm", "run", "start"]
 
 volumes:
   db:
