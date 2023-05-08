@@ -1,22 +1,28 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 function SignIn() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    try {
-      const response = await axios.post('http://localhost/3000/users', { email, password });
-      localStorage.setItem('token', response.data.token);
-      // redirect to dashboard or home page
-    } catch (error) {
-      console.error(error);
-    }
+    const data = {
+      email,
+      password,
+    };
+
+    axios
+      .post("/auth/login", data)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
-  
+
   return (
     <div className="container">
       <h1>Sign In</h1>

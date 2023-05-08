@@ -10,7 +10,7 @@ import Items from "./pages/Items";
 import NoMatch from "./pages/NoMatch";
 
 function App() {
-  axios.defaults.baseURL = "http://localhost:4040";
+  axios.defaults.baseURL = "http://localhost:8000/auth";
 
   return (
     <div className="App">
